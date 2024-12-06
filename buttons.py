@@ -29,3 +29,12 @@ g = types.ReplyKeyboardMarkup(keyboard=d, resize_keyboard=True)
 
 
 
+h = [
+    [types.KeyboardButton(text="Location"), types.KeyboardButton(text="Contact")],
+    [types.KeyboardButton(text="Back")]
+]
+golf = types.ReplyKeyboardMarkup(keyboard=h, resize_keyboard=True)
+
+
+
+
