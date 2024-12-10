@@ -38,3 +38,37 @@ golf = types.ReplyKeyboardMarkup(keyboard=h, resize_keyboard=True)
 
 
 
+
+y = [
+    [types.KeyboardButton(text="Локация"), types.KeyboardButton(text="Контакт")],
+    [types.KeyboardButton(text="Назад")]
+]
+gym = types.ReplyKeyboardMarkup(keyboard=y, resize_keyboard=True)
+
+
+
+
+yu = [
+    [types.KeyboardButton(text="Кафе"), types.KeyboardButton(text="Ресторан")],
+    [types.KeyboardButton(text="Отель"), types.KeyboardButton(text="Парк")],
+]
+we = types.ReplyKeyboardMarkup(keyboard=yu, resize_keyboard=True)
+
+
+
+
+
+# yuk = [
+#     [types.KeyboardButton(text="Кафе"), types.KeyboardButton(text="Ресторан")],
+#     [types.KeyboardButton(text="Отель"), types.KeyboardButton(text="Парк")],
+# ]
+# bz = types.ReplyKeyboardMarkup(keyboard=yuk, resize_keyboard=True)
+
+
+
+
+
+
+
+
+
