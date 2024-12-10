@@ -4,7 +4,7 @@ import random
 
 from aiogram.filters import Command
 from aiogram import Router
-from aiogram.types import Message
+from aiogram.types import Message, InlineKeyboardButton
 from config import token
 from image import *
 from buttons import *
@@ -15,13 +15,13 @@ TOKEN = token
 router = Router()
 dp = Dispatcher()
 
+
+
 @dp.message(Command("start"))
 async def start(message: Message):
     await message.answer(f"Hello {message.from_user.first_name}👋, choose your language.\n"
-                         f"Здраствуйте {message.from_user.first_name}👋, выберете язык чтобы продолжить.\n", reply_markup=keyboard)
-
-
-
+                         f"Здраствуйте {message.from_user.first_name}👋, выберете язык чтобы продолжить.\n",
+                         reply_markup=keyboard)
 
     @dp.message(F.text == "Russian")
     async def russ(message: Message):
@@ -31,14 +31,11 @@ async def start(message: Message):
     async def eng(message: Message):
         await message.answer("Your current location🏙?", reply_markup=f)
 
-
-
-
     @dp.message(F.text == "Andijon")
     async def russ(message: Message):
-        await message.answer_photo(photo="https://media.istockphoto.com/id/2150829608/photo/scenic-view-from-a-quadcopter-of-the-largest-kazakh-city-of-almaty-in-the-early-spring-morning.jpg?s=1024x1024&w=is&k=20&c=DkAZx_h3YVm7sStvEJicTL8CwtedKBIuMWGM2wkMJ2k=", reply_markup=we,  caption="добро пожаловать в Андижан"
-                                                                                                                                                                                                                                                                                              "\nчто ищете выберете 1 из 4 ")
-
+        await message.answer_photo(
+            photo="https://media.istockphoto.com/id/2150829608/photo/scenic-view-from-a-quadcopter-of-the-largest-kazakh-city-of-almaty-in-the-early-spring-morning.jpg?s=1024x1024&w=is&k=20&c=DkAZx_h3YVm7sStvEJicTL8CwtedKBIuMWGM2wkMJ2k=", caption="добро пожаловать в Андижан"
+                                     "\nчто ищете выберете 1 из 4 ",reply_markup=build.as_markup())
 
 
 @dp.message(F.text == "Кафе")
@@ -57,8 +54,6 @@ async def ca(message: Message):
             await message.answer("Тогда нажмите кафе еще раз!")
 
 
-
-
 @dp.message(F.text == "Ресторан")
 async def res(message: Message):
     a = [rasm4, rasm5, rasm6]
@@ -75,7 +70,6 @@ async def res(message: Message):
             await message.reply("ок", reply_markup=gym)
         if message.text != "да":
             await message.answer("Тогда нажмите Ресторан еще раз!")
-
 
 
 @dp.message(F.text == "Отель")
@@ -112,8 +106,9 @@ async def ot(message: Message):
 
 @dp.message(F.text == "Samarqand")
 async def sama(message: Message):
-    await message.answer_photo(photo="https://unsplash.com/photos/green-and-brown-concrete-building-x-xwFxX2wVU", reply_markup=we,  caption="добро пожаловать в Самарканд"
-                                                                                                                                                "\nчто ищете выберете 1 из 4")
+    await message.answer_photo(photo="https://unsplash.com/photos/green-and-brown-concrete-building-x-xwFxX2wVU",
+                               reply_markup=we, caption="добро пожаловать в Самарканд"
+                                                        "\nчто ищете выберете 1 из 4")
 
     # @dp.message(F.text == "Кафе")
     # async def sama(message: Message):
@@ -131,17 +126,11 @@ async def sama(message: Message):
     #             await message.reply("Тогда нажмите кафе еще раз!")
 
 
-
-
-
-
-
 async def main() -> None:
     bot = Bot(TOKEN)
     await dp.start_polling(bot)
 
+
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     asyncio.run(main())
-
-

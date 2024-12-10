@@ -1,3 +1,4 @@
+from aiogram.utils.keyboard import InlineKeyboardBuilder
 from aiogram import types
 
 key = [
@@ -67,6 +68,15 @@ we = types.ReplyKeyboardMarkup(keyboard=yu, resize_keyboard=True)
 
 
 
+build = InlineKeyboardBuilder()
+
+build.add(types.InlineKeyboardButton(
+    text="Location", url="https://maps.app.goo.gl/41kYRV9osTS5x3RLA")
+)
+
+build.add(types.InlineKeyboardButton(
+    text="Contact", url="https://google.com"
+))
 
 
 

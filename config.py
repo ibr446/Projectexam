@@ -1,2 +1,2 @@
-token = "Your token"
+token = ""
 
