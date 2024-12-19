@@ -1,3 +1,4 @@
+from aiogram.utils.keyboard import InlineKeyboardBuilder
 from aiogram import types
 
 key = [
@@ -10,25 +11,13 @@ keyboard = types.ReplyKeyboardMarkup(keyboard=key, resize_keyboard=True)
 
 
 a = [
-    [types.KeyboardButton(text="Андижан"), types.KeyboardButton(text="Самарканд")],
-    [types.KeyboardButton(text="Кашкадарья"), types.KeyboardButton(text="Навои")],
-    [types.KeyboardButton(text="Ташкент"), types.KeyboardButton(text="Наманган")],
-    [types.KeyboardButton(text="Фергана"), types.KeyboardButton(text="Бухара")],
-    [types.KeyboardButton(text="Сурхандарьинская"), types.KeyboardButton(text="Кокан")]
-]
-f = types.ReplyKeyboardMarkup(keyboard=a, resize_keyboard=True)
-
-
-ag = [
-    [types.KeyboardButton(text="Andijan"), types.KeyboardButton(text="Samarkand")],
-    [types.KeyboardButton(text="Qashqadarya"), types.KeyboardButton(text="Navoi")],
-    [types.KeyboardButton(text="Tashkent"), types.KeyboardButton(text="Namangan")],
+    [types.KeyboardButton(text="Andijon"), types.KeyboardButton(text="Samarqand")],
+    [types.KeyboardButton(text="Qashqadaryo"), types.KeyboardButton(text="Navoiy")],
+    [types.KeyboardButton(text="Toshkent"), types.KeyboardButton(text="Namangan")],
     [types.KeyboardButton(text="Farg'ona"), types.KeyboardButton(text="Buxoro")],
     [types.KeyboardButton(text="Surxandaryo"), types.KeyboardButton(text="Qo'qon")]
 ]
-fire = types.ReplyKeyboardMarkup(keyboard=ag, resize_keyboard=True)
-
-
+f = types.ReplyKeyboardMarkup(keyboard=a, resize_keyboard=True)
 
 
 
@@ -69,6 +58,25 @@ we = types.ReplyKeyboardMarkup(keyboard=yu, resize_keyboard=True)
 
 
 
+
+# yuk = [
+#     [types.KeyboardButton(text="Кафе"), types.KeyboardButton(text="Ресторан")],
+#     [types.KeyboardButton(text="Отель"), types.KeyboardButton(text="Парк")],
+# ]
+# bz = types.ReplyKeyboardMarkup(keyboard=yuk, resize_keyboard=True)
+
+
+
+
+build = InlineKeyboardBuilder()
+
+build.add(types.InlineKeyboardButton(
+    text="Location", url="https://maps.app.goo.gl/41kYRV9osTS5x3RLA")
+)
+
+build.add(types.InlineKeyboardButton(
+    text="Contact", url="https://google.com"
+))
 
 
 
